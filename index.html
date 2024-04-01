@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMA Blog</title>
+  <style>
+    /* Reset default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      color: #fff;
+    }
+
+    /* Navigation styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 5px 10px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ff4500;
+    }
+
+    /* Hero section styles */
+    .hero {
+      background-image: url('https://media.istockphoto.com/id/641509146/vector/3d-rendered-illustration-of-an-mma-mixed-martial-arts-fighting-cage-arena.jpg?s=612x612&w=0&k=20&c=9qqvx6DHpenu033Hw0hry-NfqEJ-FgOpEgWjq8UNeN8=');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      z-index: 1;
+    }
+
+    /* Content section styles */
+    .content {
+      padding-top: 70px; /* Adjust according to navbar height */
+      text-align: center;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    /* Event styles */
+    .event {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+    }
+
+    .event h2 {
+      color: #ff4500;
+      margin-bottom: 10px;
+    }
+
+    .event p {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+
+    /* Fighter styles */
+    .fighters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .fighter {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+      margin: 20px;
+      cursor: pointer;
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+
+    .fighter img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#">Fighters</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Hero section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Welcome to the MMA Blog</h1>
+      <p>This is where you'll find all the latest news, events, and updates in the world of Mixed Martial Arts.</p>
+    </div>
+  </div>
+
+  <!-- Content section -->
+  <div class="content">
+    <!-- Upcoming event -->
+    <div class="event">
+      <h2>Upcoming Event</h2>
+      <p>Join us for the MMA Championship on October 15th, 2024. Witness epic battles between the world's top fighters and enjoy an unforgettable experience.</p>
+    </div>
+
+    <!-- Latest news -->
+    <div class="event">
+      <h2>Latest News</h2>
+      <p>Stay updated with the latest news in the MMA world. From fighter announcements to match results, we've got you covered.</p>
+    </div>
+
+    <!-- Featured fighters -->
+    <div class="event">
+      <h2>Featured Fighters</h2>
+      <div class="fighters">
+        <div class="fighter" onclick="toggleFighterInfo('tony')">
+          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-12/FERGUSON_TONY_L_12-16.png?itok=U0VMIfxz" alt="Tony Ferguson">
+          <p>Tony Ferguson</p>
+        </div>
+        <div class="fighter" onclick="toggleFighterInfo('oliveira')">
+          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-06/OLIVEIRA_CHARLES_L_06-10.png?itok=vKMJlOYL" alt="Charles Oliveira">
+          <p>Charles Oliveira</p>
+        </div>
+        <div class="fighter" onclick="toggleFighterInfo('holloway')">
+          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-04/HOLLOWAY_MAX_L_04-15.png?itok=TQ_xcSO-" alt="Max Holloway">
+          <p>Max Holloway</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for toggling fighter info -->
+  <script>
+    function toggleFighterInfo(fighter) {
+      const fighterInfo = document.getElementById(`${fighter}-info`);
+      fighterInfo.style.display = fighterInfo.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
